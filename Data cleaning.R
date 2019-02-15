@@ -70,7 +70,7 @@ df2 <- df %>% # a handy pipe to connect them - read as 'then'
 
 
 
-## Recoding a race/ethnicity free-text variable ----
+## Ex. 3) Recoding a race/ethnicity free-text variable ----
 library(stringr)
 
 unique(df$RACE) #returns each potential value of a variable
@@ -102,8 +102,17 @@ new_df <- new_df %>%
   ))
 
 
+## Ex. 4) PAUSE FOR DATES 
+library(lubridate)
+bday <- mdy("10/20/1988")
+wday(bday, label = T)
+month(bday)
+year(bday) <- 2019
+wday(bday, label = T)
 
-## Putting data manipulation all together ----
+
+
+## Ex. 5) Putting data manipulation all together ----
 
 df_exp2 <- df_exp %>%
   setNames(tolower(names(.))) %>% #make all var names lowercase
